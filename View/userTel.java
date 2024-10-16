@@ -53,7 +53,7 @@ public class userTel extends JFrame implements ActionListener {
 		// 숫자버튼
 		buttonPanel.setLayout(new GridLayout(4, 3));
 		buttonPanel.setBounds(60, 70, 270, 200);
-		buttonPanel.setBackground(new Color(200, 150, 100));
+		buttonPanel.setBackground(Color.gray);
 		buttonPanel.setFont(new Font("Arial", Font.BOLD, 50));
 
 		// 지움버튼
