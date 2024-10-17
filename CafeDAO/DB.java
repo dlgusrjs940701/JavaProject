@@ -29,6 +29,7 @@ public abstract class DB {
 	protected boolean conn() {
 		try {
 			conn = DriverManager.getConnection(url, username, password);
+			conn.setAutoCommit(false);
 			System.out.println("커넥션 자원 획득 성공");
 			return true;
 		} catch (SQLException e) {

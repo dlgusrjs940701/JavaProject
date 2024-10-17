@@ -7,30 +7,32 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import CafeDAO.menuDAO;
+import CafeDTO.menuDTO;
+
 public class coffeeMain extends JFrame implements ActionListener {
 
+	public coffeeMain coffeemain = null;
 	private JButton button[] = new JButton[16];
 	private JComboBox<String> menuComboBox = new JComboBox();
 	private DefaultTableModel cartModel = new DefaultTableModel();
 	private JTable cartList = new JTable();
-	private String[][] menus = { { "아메리카노", "카페라떼", "바닐라라떼" }, // 커피
-			{ "레몬에이드", "자몽에이드" }, // 논커피
-			{ "사과에이드" }, // 에이드
-			{ "케이크", "쿠키" } // 디저트
-	};
 	private String[] columns = { "메뉴 이름", "수량", "가격" };
+	private JPanel buttonPanel = new JPanel(new GridLayout(5, 5));
+	private String category = null;
 
 	public void coffeemain() {
 		setTitle("메인화면");
@@ -41,17 +43,18 @@ public class coffeeMain extends JFrame implements ActionListener {
 		JMenuBar menuBar = new JMenuBar();
 		String[] categories = { "커피", "논커피", "에이드", "디저트" };
 		for (String category : categories) {
-			JMenu menu = new JMenu(category);
-			menu.setFont(new Font("Malgun Gothic", Font.BOLD, 18));
-			menu.addActionListener(this);
-			menuBar.add(menu);
+//			JMenu menu=new JMenu(category);
+			JMenuItem menuItem = new JMenuItem(category);
+			menuItem.setFont(new Font("Malgun Gothic", Font.BOLD, 18));
+			menuItem.addActionListener(this);
+			menuBar.add(menuItem);
 		}
 		setJMenuBar(menuBar);
 
 		// 중앙 버튼
-		JPanel buttonPanel = new JPanel(new GridLayout(4, 4));
+//		loadMenu("커피");
 		for (int i = 0; i < button.length; i++) {
-			button[i] = new JButton("버튼" + (i + 1));
+			button[i] = new JButton();
 			buttonPanel.add(button[i]);
 			button[i].setBorderPainted(false);
 			button[i].setBackground(Color.white);
@@ -65,6 +68,7 @@ public class coffeeMain extends JFrame implements ActionListener {
 		JScrollPane cartScroll = new JScrollPane(cartList);
 		cartScroll.setPreferredSize(new Dimension(100, 100));
 		cartList.setFont(new Font("Malgun Gothic", Font.PLAIN, 16));
+//		add(cartScroll, BorderLayout.EAST);
 
 		// 결제 방법
 		String[] paymentMethod = { "신용카드", "현금", "계좌이체" };
@@ -92,8 +96,30 @@ public class coffeeMain extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		String category = e.getActionCommand();
+//	    System.out.println(category); 
+		loadMenu(category);
+	}
 
+	private void loadMenu(String category) {
+//		System.out.println(category);
+		buttonPanel.removeAll();
+//		System.out.println(category);
+		menuDAO menudao = menuDAO.getinstance();
+		menuDTO mdto = new menuDTO();
+		mdto.setMenu_category(category);
+//		System.out.println(mdto.getMenu_category());
+		ArrayList<menuDTO> menus = menudao.getCategoryMenu(mdto);
+
+//		System.out.println(category);
+//		System.out.println( menus.size());
+
+		for (menuDTO menu : menus) {
+			JButton menuButton = new JButton(menu.getMenu_name() + " - " + menu.getMenu_price() + " 원 ");
+			buttonPanel.add(menuButton);
+		}
+		buttonPanel.revalidate();
+		buttonPanel.repaint();
 	}
 
 }

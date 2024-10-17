@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.rmi.server.UID;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,7 +17,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import CafeDAO.menuDAO;
 import CafeDAO.userDAO;
+import CafeDTO.menuDTO;
+import CafeDTO.userDTO;
 
 public class userTel extends JFrame implements ActionListener {
 	public userTel userTel = null;
@@ -25,7 +30,9 @@ public class userTel extends JFrame implements ActionListener {
 	private String button[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "0", "#" };
 	private JButton deleteButton = new JButton("지움");
 	private JButton nextButton = new JButton("다음");
+	private ArrayList<userDTO> udto = new ArrayList<>();
 	coffeeMain coffeemain = new coffeeMain();
+	private menuDTO menuDTO = null;
 
 	public void usertel() {
 		setLayout(null);
@@ -70,7 +77,7 @@ public class userTel extends JFrame implements ActionListener {
 
 		for (int i = 0; i < button.length; i++) {
 			buttons[i] = new JButton(button[i]);
-			buttons[i].setBackground(new Color(160, 82, 45));
+			buttons[i].setBackground(Color.gray);
 			buttons[i].setBorderPainted(true);
 			buttonPanel.add(buttons[i]);
 		}
@@ -88,9 +95,14 @@ public class userTel extends JFrame implements ActionListener {
 		if (e.getSource() == deleteButton) {
 			inputField.setText(" ");
 		} else if (e.getSource() == nextButton) {
+			String phoneNum = inputField.getText();
+			userDTO newUser = new userDTO(phoneNum);
+			userDAO userdao = userDAO.getinstance();
+			userdao.add(newUser);
 			JOptionPane.showMessageDialog(this, "메인메뉴 페이지로 이동합니다.");
+			menuDAO menudao = menuDAO.getinstance();
+			menudao.menuDAO();
 			coffeemain.coffeemain();
-//			userDAO.userdao.add();
 
 		}
 	}
