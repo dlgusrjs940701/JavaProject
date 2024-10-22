@@ -6,12 +6,22 @@ public class menuDTO {
 	private String menu_name = null;
 	private int menu_price = 0;
 	private String menu_category = null;
+	private String image = null;
 
-	public menuDTO(int menu_id, String menu_name, int menu_price, String menu_category) {
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public menuDTO(int menu_id, String menu_name, int menu_price, String menu_category, String image) {
 		this.menu_id = menu_id;
 		this.menu_name = menu_name;
 		this.menu_price = menu_price;
 		this.menu_category = menu_category;
+		this.image = image;
 	}
 
 	public menuDTO() {

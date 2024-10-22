@@ -53,58 +53,59 @@ public class menuDAO extends DB {
 	}
 
 	private void menuData() {
-		addMenu(new menuDTO(1, "아메리카노", 2000, "커피"));
-		addMenu(new menuDTO(2, "미숫가루", 3000, "논커피"));
-		addMenu(new menuDTO(3, "레몬에이드", 3500, "에이드"));
-		addMenu(new menuDTO(4, "포도에이드", 3500, "에이드"));
-		addMenu(new menuDTO(5, "초코케이크", 4000, "디저트"));
-		addMenu(new menuDTO(6, "에스프레소", 3000, "커피"));
-		addMenu(new menuDTO(7, "카페라떼", 3500, "커피"));
-		addMenu(new menuDTO(8, "카푸치노", 2500, "커피"));
-		addMenu(new menuDTO(9, "카라멜", 4000, "논커피"));
-		addMenu(new menuDTO(10, "달고나라떼", 4000, "논커피"));
-		addMenu(new menuDTO(11, "옥수수라떼", 4000, "논커피"));
-		addMenu(new menuDTO(12, "자몽에이드", 3000, "에이드"));
-		addMenu(new menuDTO(13, "파인에이드", 3500, "에이드"));
-		addMenu(new menuDTO(14, "아이스티", 2500, "에이드"));
-		addMenu(new menuDTO(15, "딸기케이크", 4000, "디저트"));
-		addMenu(new menuDTO(16, "치즈케이크", 4000, "디저트"));
-		addMenu(new menuDTO(17, "카페모카", 3000, "커피"));
-		addMenu(new menuDTO(18, "헤이즐넛", 3500, "커피"));
-		addMenu(new menuDTO(19, "초코라떼", 3000, "논커피"));
-		addMenu(new menuDTO(20, "녹차라떼", 4000, "논커피"));
-		addMenu(new menuDTO(21, "고구마라떼", 4000, "논커피"));
-		addMenu(new menuDTO(22, "오곡라떼", 4000, "논커피"));
-		addMenu(new menuDTO(23, "딸기에이드", 4000, "에이드"));
-		addMenu(new menuDTO(24, "그린티라떼", 4000, "논커피"));
-		addMenu(new menuDTO(25, "핫초코", 3000, "논커피"));
-		addMenu(new menuDTO(26, "레몬티", 3000, "에이드"));
-		addMenu(new menuDTO(27, "유자티", 3000, "에이드"));
-		addMenu(new menuDTO(28, "청귤티", 3000, "에이드"));
-		addMenu(new menuDTO(29, "과일샐러드", 4000, "디저트"));
-		addMenu(new menuDTO(30, "유자에이드", 4000, "에이드"));
-		addMenu(new menuDTO(31, "사과에이드", 3000, "에이드"));
-		addMenu(new menuDTO(32, "메론에이드", 3000, "에이드"));
-		addMenu(new menuDTO(33, "키위에이드", 3000, "에이드"));
-		addMenu(new menuDTO(34, "시폰케이크", 4000, "디저트"));
-		addMenu(new menuDTO(35, "티라미수", 2000, "디저트"));
-		addMenu(new menuDTO(36, "무스케이크", 3000, "디저트"));
-		addMenu(new menuDTO(37, "버터케이크", 3000, "디저트"));
-		addMenu(new menuDTO(38, "휘낭시에", 6000, "디저트"));
-		addMenu(new menuDTO(39, "마들렌", 5000, "디저트"));
-		addMenu(new menuDTO(40, "소금빵", 2000, "디저트"));
+		addMenu(new menuDTO(1, "아메리카노", 2000, "커피", "C:\\Users\\human-18\\Desktop\\카페 이미지\\아메리카노.jfif"));
+		addMenu(new menuDTO(2, "미숫가루", 3000, "논커피", "C:\\Users\\human-18\\Desktop\\카페 이미지\\미숫가루.jfif"));
+		addMenu(new menuDTO(3, "레몬에이드", 3500, "에이드", "C:\\Users\\human-18\\Desktop\\카페 이미지\\레몬에이드.jfif"));
+		addMenu(new menuDTO(4, "포도에이드", 3500, "에이드", "C:\\Users\\human-18\\Desktop\\카페 이미지\\포도에이드.jfif"));
+		addMenu(new menuDTO(5, "초코케이크", 4000, "디저트", "C:\\Users\\human-18\\Desktop\\카페 이미지\\초코케이크.jfif"));
+		addMenu(new menuDTO(6, "에스프레소", 3000, "커피", "C:\\Users\\human-18\\Desktop\\카페 이미지\\에스프레소.jfif"));
+		addMenu(new menuDTO(7, "카페라떼", 3500, "커피", "C:\\Users\\human-18\\Desktop\\카페 이미지\\카페라떼.jfif"));
+		addMenu(new menuDTO(8, "카푸치노", 2500, "커피", "C:\\Users\\human-18\\Desktop\\카페 이미지\\카푸치노.jfif"));
+		addMenu(new menuDTO(9, "카라멜", 4000, "논커피", "C:\\Users\\human-18\\Desktop\\카페 이미지\\카라멜마끼야토.jfif"));
+		addMenu(new menuDTO(10, "달고나라떼", 4000, "논커피", "C:\\Users\\human-18\\Desktop\\카페 이미지\\달고나라떼.jfif"));
+		addMenu(new menuDTO(11, "옥수수라떼", 4000, "논커피", "C:\\Users\\human-18\\Desktop\\카페 이미지\\옥수수라떼.jfif"));
+		addMenu(new menuDTO(12, "자몽에이드", 3000, "에이드", "C:\\Users\\human-18\\Desktop\\카페 이미지\\자몽에이드.jfif"));
+		addMenu(new menuDTO(13, "파인에이드", 3500, "에이드", "C:\\Users\\human-18\\Desktop\\카페 이미지\\파인에이드.jfif"));
+		addMenu(new menuDTO(14, "아이스티", 2500, "에이드", "C:\\Users\\human-18\\Desktop\\카페 이미지\\아이스티.jfif"));
+		addMenu(new menuDTO(15, "딸기케이크", 4000, "디저트", "C:\\Users\\human-18\\Desktop\\카페 이미지\\딸기케이크.jfif"));
+		addMenu(new menuDTO(16, "치즈케이크", 4000, "디저트", "C:\\Users\\human-18\\Desktop\\카페 이미지\\치즈케이크.jfif"));
+		addMenu(new menuDTO(17, "카페모카", 3000, "커피", "C:\\Users\\human-18\\Desktop\\카페 이미지\\카페모카.jfif"));
+		addMenu(new menuDTO(18, "헤이즐넛", 3500, "커피", "C:\\Users\\human-18\\Desktop\\카페 이미지\\헤이즐넛.jfif"));
+		addMenu(new menuDTO(19, "초코라떼", 3000, "논커피", "C:\\Users\\human-18\\Desktop\\카페 이미지\\초코라떼.jfif"));
+		addMenu(new menuDTO(20, "녹차라떼", 4000, "논커피", "C:\\Users\\human-18\\Desktop\\카페 이미지\\녹차라떼.jfif"));
+		addMenu(new menuDTO(21, "고구마라떼", 4000, "논커피", "C:\\Users\\human-18\\Desktop\\카페 이미지\\고구마라떼.jfif"));
+		addMenu(new menuDTO(22, "오곡라떼", 4000, "논커피", "C:\\Users\\human-18\\Desktop\\카페 이미지\\오곡라떼.jfif"));
+		addMenu(new menuDTO(23, "딸기에이드", 4000, "에이드", "C:\\Users\\human-18\\Desktop\\카페 이미지\\딸기에이드.jfif"));
+		addMenu(new menuDTO(24, "그린티라떼", 4000, "논커피", "C:\\Users\\human-18\\Desktop\\카페 이미지\\그린티라떼.jfif"));
+		addMenu(new menuDTO(25, "핫초코", 3000, "논커피", "C:\\Users\\human-18\\Desktop\\카페 이미지\\핫초코.jfif"));
+		addMenu(new menuDTO(26, "레몬티", 3000, "에이드", "C:\\Users\\human-18\\Desktop\\카페 이미지\\레몬티.jfif"));
+		addMenu(new menuDTO(27, "유자티", 3000, "에이드", "C:\\Users\\human-18\\Desktop\\카페 이미지\\유자티.jfif"));
+		addMenu(new menuDTO(28, "청귤티", 3000, "에이드", "C:\\Users\\human-18\\Desktop\\카페 이미지\\청귤티.jfif"));
+		addMenu(new menuDTO(29, "과일샐러드", 4000, "디저트", "C:\\Users\\human-18\\Desktop\\카페 이미지\\과일샐러드.jfif"));
+		addMenu(new menuDTO(30, "유자에이드", 4000, "에이드", "C:\\Users\\human-18\\Desktop\\카페 이미지\\유자에이드.jfif"));
+		addMenu(new menuDTO(31, "사과에이드", 3000, "에이드", "C:\\Users\\human-18\\Desktop\\카페 이미지\\사과에이드.jfif"));
+		addMenu(new menuDTO(32, "메론에이드", 3000, "에이드", "C:\\Users\\human-18\\Desktop\\카페 이미지\\메론에이드.jfif"));
+		addMenu(new menuDTO(33, "키위에이드", 3000, "에이드", "C:\\Users\\human-18\\Desktop\\카페 이미지\\키위에이드.jfif"));
+		addMenu(new menuDTO(34, "시폰케이크", 4000, "디저트", "C:\\Users\\human-18\\Desktop\\카페 이미지\\시폰케이크.jfif"));
+		addMenu(new menuDTO(35, "티라미수", 2000, "디저트", "C:\\Users\\human-18\\Desktop\\카페 이미지\\티라미수.jfif"));
+		addMenu(new menuDTO(36, "무스케이크", 3000, "디저트", "C:\\Users\\human-18\\Desktop\\카페 이미지\\무스케이크.jfif"));
+		addMenu(new menuDTO(37, "버터케이크", 3000, "디저트", "C:\\Users\\human-18\\Desktop\\카페 이미지\\버터케이크.jfif"));
+		addMenu(new menuDTO(38, "휘낭시에", 6000, "디저트", "C:\\Users\\human-18\\Desktop\\카페 이미지\\휘낭시에.jfif"));
+		addMenu(new menuDTO(39, "마들렌", 5000, "디저트", "C:\\Users\\human-18\\Desktop\\카페 이미지\\마들렌.jfif"));
+		addMenu(new menuDTO(40, "소금빵", 2000, "디저트", "C:\\Users\\human-18\\Desktop\\카페 이미지\\소금빵.jfif"));
 
 	}
 
 	private void addMenu(menuDTO menu) {
 		if (conn()) {
 			try {
-				String sql = "insert into menu values (?,?,?,?)";
+				String sql = "insert into menu values (?,?,?,?,?)";
 				PreparedStatement psmt1 = conn.prepareStatement(sql);
 				psmt1.setInt(1, menu.getMenu_id());
 				psmt1.setString(2, menu.getMenu_name());
 				psmt1.setInt(3, menu.getMenu_price());
 				psmt1.setString(4, menu.getMenu_category());
+				psmt1.setString(5, menu.getImage());
 				int resultInt = psmt1.executeUpdate();
 				if (resultInt > 0) {
 					conn.commit();
@@ -129,7 +130,7 @@ public class menuDAO extends DB {
 
 		if (conn()) {
 			try {
-				String sql = "SELECT menu_id, menu_name, menu_price from menu where menu_category=?";
+				String sql = "SELECT menu_id, menu_name, menu_price, image from menu where menu_category=?";
 				PreparedStatement psmt1 = conn.prepareStatement(sql);
 				psmt1.setString(1, mdto.getMenu_category());
 				ResultSet rs = psmt1.executeQuery();
@@ -139,6 +140,7 @@ public class menuDAO extends DB {
 					menu.setMenu_name(rs.getString("menu_name"));
 					menu.setMenu_price(rs.getInt("menu_price"));
 					menu.setMenu_category(mdto.getMenu_category());
+					menu.setImage(rs.getString("image"));
 					menus.add(menu);
 				}
 
@@ -151,6 +153,29 @@ public class menuDAO extends DB {
 
 		}
 		return menus;
+
+	}
+
+	public ArrayList<menuDTO> loadMenuName() {
+		if (conn()) {
+			try {
+				String sql = "select menu_name from menu";
+				PreparedStatement psmt1 = conn.prepareStatement(sql);
+				ResultSet rs = psmt1.executeQuery();
+				while (rs.next()) {
+					menuDTO mdto = new menuDTO();
+					mdto.setMenu_name(rs.getString("menu_name"));
+					menuList.add(mdto);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				disconn();
+			}
+
+		}
+		return menuList;
 
 	}
 

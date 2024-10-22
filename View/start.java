@@ -22,7 +22,7 @@ public class start extends JFrame implements ActionListener {
 
 	public void main() {
 		setTitle("휴먼 카페");
-		setSize(500, 500);
+		setSize(600, 500);
 		setLocationRelativeTo(null); // 화면 중앙에 위치
 
 		Container con = getContentPane();
@@ -31,18 +31,18 @@ public class start extends JFrame implements ActionListener {
 		// 이미지 화면에 맞게 구현방법
 		ImageIcon image = new ImageIcon("C:\\Users\\human-18\\Desktop\\카페 이미지\\커피1.jfif");
 		Image img = image.getImage();
-		Image changeimg = img.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
+		Image changeimg = img.getScaledInstance(600, 500, Image.SCALE_SMOOTH);
 		JLabel label = new JLabel(new ImageIcon(changeimg));
-		label.setBounds(0, 0, 500, 500);
+		label.setBounds(0, 0, 600, 500);
 		con.add(label);
 		
-		styleButton(button,100,100);
+		styleButton(button,80,80);
 		label.add(button);
 		button.addActionListener(this);
 		
-		styleButton(button2,200,100);
+		styleButton(button2,320,80);
 		label.add(button2);
-		button2.addActionListener(this);
+		button2.addActionListener(this); 
 
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -56,12 +56,10 @@ public class start extends JFrame implements ActionListener {
 		button3.setBackground(new Color(255, 255, 255));
 		button3.setForeground(new Color(51, 51, 51));
 		button3.setFocusPainted(false); // 버튼의 포커스 효과 제거
-		button3.setBorder(BorderFactory.createCompoundBorder()); // 둥근 테두리 추가
 		button3.setCursor(new Cursor(Cursor.HAND_CURSOR)); // 마우스 커서 변경
+		button3.setBorder(BorderFactory.createLineBorder(new Color(100, 100, 100), 2));
 		button3.setOpaque(true);
-		button3.setContentAreaFilled(false); // 배경 색상 제거
-		button3.setBorderPainted(true); // 테두리 색상 제거
-		button3.setBackground(new Color(255, 255, 255, 200)); // 반투명 배경
+		button3.setContentAreaFilled(true); // 배경 색상 제거
 	}
 
 	@Override

@@ -54,4 +54,9 @@ public class paymentDTO {
 		this.status = status;
 	}
 
+	public String getUser_tel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

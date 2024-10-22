@@ -8,19 +8,21 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
+import CafeDAO.menuDAO;
 import CafeDAO.paymentDAO;
+import CafeDTO.menuDTO;
 import CafeDTO.paymentDTO;
 
 public class manager extends JFrame implements ActionListener {
@@ -39,14 +41,17 @@ public class manager extends JFrame implements ActionListener {
 		JLabel dateLabel = new JLabel("오늘 날짜: " + date);
 		dateLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
-		String[] indicate = { "주문번호", "결제수단", "가격","결제시간","결제상태" };
+		String[] indicate = { "주문번호", "결제수단", "가격", "결제시간", "결제상태" };
 		DefaultTableModel model = new DefaultTableModel(indicate, 0);
 		JTable table = new JTable(model);
+
 		// 결제데이터
 		ArrayList<paymentDTO> pay = paymentDAO.getinstance().loadPay();
+
 		for (paymentDTO pay1 : pay) {
 			Object[] row = { pay1.getPayment_id(), pay1.getPayment_method(), pay1.getAmount(), pay1.getPayment_time(),
-					pay1.getStatus() };
+					pay1.getStatus(), };
+
 			model.addRow(row);
 
 		}
@@ -62,7 +67,6 @@ public class manager extends JFrame implements ActionListener {
 		con.add(infoPanel, BorderLayout.SOUTH);
 		con.add(dateLabel, BorderLayout.NORTH);
 		con.add(new JScrollPane(table), BorderLayout.CENTER);
-
 
 		frame.setVisible(true);
 		frame.pack();

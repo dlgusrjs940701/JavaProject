@@ -5,12 +5,14 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -37,11 +39,11 @@ public class coffeeMain extends JFrame implements ActionListener {
 	private JTable cartList = new JTable();
 	private String[] columns = { "메뉴 이름", "수량", "가격" };
 	private JPanel buttonPanel = new JPanel(new GridLayout(5, 5));
-	private paymentDTO paymentDTO = null;
+//	private paymentDTO paymentDTO = null;
 
 	public void coffeemain() {
-		setTitle("메인화면");
-		setSize(1000, 900);
+		setTitle("휴먼 카페");
+		setSize(1000, 980);
 		setLayout(new BorderLayout());
 
 		// 상단 메뉴
@@ -58,7 +60,9 @@ public class coffeeMain extends JFrame implements ActionListener {
 
 			});
 			menu.setFont(new Font("Malgun Gothic", Font.BOLD, 18));
+			menu.setForeground(Color.WHITE);
 			menuBar.add(menu);
+			menuBar.setBackground(Color.BLACK);
 		}
 		setJMenuBar(menuBar);
 
@@ -127,6 +131,8 @@ public class coffeeMain extends JFrame implements ActionListener {
 		paymentPanel.add(paymentComboBox);
 		paymentPanel.add(payButton);
 		bottomPanel.add(paymentPanel, BorderLayout.SOUTH);
+		
+		loadMenu("커피");
 
 		add(buttonPanel, BorderLayout.CENTER);
 		add(bottomPanel, BorderLayout.EAST);
@@ -157,7 +163,13 @@ public class coffeeMain extends JFrame implements ActionListener {
 		buttonPanel.setLayout(new GridLayout(rows, columns)); // 그리드 레이아웃 설정
 
 		for (menuDTO menu : menus) {
-			JButton menuButton = new JButton(menu.getMenu_name() + " - " + menu.getMenu_price() + " 원 ");
+			ImageIcon image = new ImageIcon(menu.getImage());
+			Image img = image.getImage();
+			Image changeimg = img.getScaledInstance(150, 150, Image.SCALE_SMOOTH);
+			JButton menuButton = new JButton(new ImageIcon(changeimg));
+			menuButton.setText(menu.getMenu_name() + " - " + menu.getMenu_price() + " 원");
+			menuButton.setHorizontalTextPosition(JButton.CENTER);
+			menuButton.setVerticalTextPosition(JButton.BOTTOM);
 			menuButton.setPreferredSize(new Dimension(100, 50)); // 버튼 크기
 			menuButton.setFont(new Font("Malgun Gothic", Font.BOLD, 16)); // 폰트 스타일
 			menuButton.setBackground(new Color(240, 240, 240)); // 배경색
