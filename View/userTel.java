@@ -87,10 +87,10 @@ public class userTel extends JFrame implements ActionListener {
 		inputField.addActionListener(this);
 
 		setVisible(true);
-//		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
 
-	@Override
+	@Override  
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == deleteButton) {
 			inputField.setText(" ");

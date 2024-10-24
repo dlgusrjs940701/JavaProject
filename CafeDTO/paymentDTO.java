@@ -7,12 +7,29 @@ public class paymentDTO {
 	private String amount = null;
 	private String payment_time = null;
 	private String status = null;
+	private String user_id = null;
+	private String user_tel = null;
+	
 
 //	public paymentDTO(String Payment_method, String Amount, String Status) {
 //		this.payment_method = Payment_method;
 //		this.amount = Amount;
 //		this.status = Status;
 //	}
+
+
+	
+	public void setUser_tel(String user_tel) {
+		this.user_tel = user_tel;
+	}
+
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
 
 	public String getPayment_id() {
 		return payment_id;
@@ -56,7 +73,7 @@ public class paymentDTO {
 
 	public String getUser_tel() {
 		// TODO Auto-generated method stub
-		return null;
+		return user_tel;
 	}
 
 }

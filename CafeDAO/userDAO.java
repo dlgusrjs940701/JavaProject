@@ -22,7 +22,7 @@ public class userDAO extends DB {
 		// TODO Auto-generated method stub
 		if (conn()) {
 			try {
-				String sql = "insert into Client values(Client_seq.nextval, ?)";
+				String sql = "insert into Client values(user_id_seq.nextval, ?)";
 				PreparedStatement psmt1 = conn.prepareStatement(sql);
 				psmt1.setString(1, udto.getUser_tel());
 

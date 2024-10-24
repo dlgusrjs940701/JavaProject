@@ -21,6 +21,7 @@ public class paymentDAO extends DB {
 
 	// 매출저장
 	public void addTotalPay(paymentDTO pdto) {
+		paymentDTO pay1 = new paymentDTO();
 		if (conn()) {
 			try {
 				String sql = "insert into payment values(Payment_seq.nextval,?,?,CURRENT_TIMESTAMP,?)";
@@ -51,7 +52,8 @@ public class paymentDAO extends DB {
 		// TODO Auto-generated method stub
 		if (conn()) {
 			try {
-				String sql = "select * from payment";
+				String sql = "SELECT * from payment ";
+
 				PreparedStatement psmt1 = conn.prepareStatement(sql);
 				ResultSet rs = psmt1.executeQuery();
 				while (rs.next()) {

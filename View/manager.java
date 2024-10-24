@@ -50,7 +50,7 @@ public class manager extends JFrame implements ActionListener {
 
 		for (paymentDTO pay1 : pay) {
 			Object[] row = { pay1.getPayment_id(), pay1.getPayment_method(), pay1.getAmount(), pay1.getPayment_time(),
-					pay1.getStatus(), };
+					pay1.getStatus() };
 
 			model.addRow(row);
 
@@ -71,12 +71,15 @@ public class manager extends JFrame implements ActionListener {
 		frame.setVisible(true);
 		frame.pack();
 		frame.setLocationRelativeTo(null);
-//		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
+		if (e.getSource() == button1) {
+			frame.dispose();
+		}
 	}
 }

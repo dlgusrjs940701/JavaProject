@@ -47,7 +47,7 @@ public class checkManager extends JFrame implements ActionListener {
 		log.setBackground(new Color(60,179,113));
 		panel.add(log);
 		setVisible(true);
-//		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
 
 	@Override

@@ -92,6 +92,7 @@ public class coffeeMain extends JFrame implements ActionListener {
 		payButton.setFont(new Font("Malgun Gothic", Font.BOLD, 16));
 		payButton.addActionListener(new ActionListener() {
 
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -99,9 +100,9 @@ public class coffeeMain extends JFrame implements ActionListener {
 				String msg = "총 결제 금액 : " + totalAmount + " 원 결제를 진행하시겠습니까?";
 				int ok = JOptionPane.showConfirmDialog(null, msg, "결제 확인", JOptionPane.OK_OPTION);
 				if (ok == JOptionPane.OK_OPTION) {
-					paymentDTO pdto=new paymentDTO();
+					paymentDTO pdto = new paymentDTO();
 //					pdto.setPayment_id(null);
-					pdto.setPayment_method((String)paymentComboBox.getSelectedItem());
+					pdto.setPayment_method((String) paymentComboBox.getSelectedItem());
 					pdto.setAmount(String.valueOf(totalAmount));
 //					pdto.setPayment_time(null);
 					pdto.setStatus("완료");
@@ -131,14 +132,14 @@ public class coffeeMain extends JFrame implements ActionListener {
 		paymentPanel.add(paymentComboBox);
 		paymentPanel.add(payButton);
 		bottomPanel.add(paymentPanel, BorderLayout.SOUTH);
-		
+
 		loadMenu("커피");
 
 		add(buttonPanel, BorderLayout.CENTER);
 		add(bottomPanel, BorderLayout.EAST);
 
 		setVisible(true);
-//		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLocationRelativeTo(null);
 	}
 
